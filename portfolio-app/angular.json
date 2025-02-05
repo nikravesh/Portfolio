@@ -28,13 +28,19 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
-              }
+                "input": "public"                
+              },
+              "src/assets",
+              "src/assets/images"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css" 
             ],
-            "scripts": []
+            "scripts": [
+              "bootstrap/dist/js/bootstrap.bundle.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -98,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
