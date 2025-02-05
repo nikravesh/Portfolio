@@ -22,55 +22,82 @@
   flex-wrap: wrap;
   transition-duration: 0.4s;
   list-style-type: none;
+
+  .item {
+    font-size: 16px;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    font-weight: 400;
+    opacity: 1 !important;
+
+    .inner-item {
+      padding: 4px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
 }
 
-.item {
-  width: 150px;
-  display: inline-block;
-  margin: 0.5rem 0.7rem;
-  transition-duration: 0;
-}
-.inner-item {
-  border-radius: 8px;
-  background-color: #5353534d;
-  padding: 4px 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.logo-photo {
-  margin: 8px;
-  width: 75px;
-  height: 75px;
-  border-radius: 80% 80% 80%;
-  box-shadow: 0 1px 5px #000;
-  animation-name: _ngcontent-ng-c1825008706_border-anime;
-  animation-direction: normal;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-out;
+.logo {
+  .logo-photo {
+    margin: 8px;
+    width: 75px;
+    height: 75px;
+    border-radius: 80% 80% 80%;
+    box-shadow: 0 1px 5px #000;
+    animation-name: _ngcontent-ng-c1825008706_border-anime;
+    animation-direction: normal;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+  }
+  .logo-title {
+    margin: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
 }
 
 a {
-  text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
   transition-duration: 0.3s;
   font-size: 1rem;
-  color: #fb8500;
-}
-.i {
-  margin: 4px 0;
-}
-.span {
-  margin: 4px 0;
-}
-.logo-title {
-  //color: #e9ecef;
-  margin: 1rem;
   color: #fff;
-  text-transform: uppercase;
-  font-weight: bolder;
+  text-decoration: underline solid transparent;
+  transition: text-decoration 1s ease;
+}
+
+span {
+  margin: 4px 0;
+}
+
+.underline-hover {
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffbd39;
+    transform: scaleX(0);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease-out;
+  }
+
+  &:hover {
+    &:after {
+      transform: scaleX(1);
+      transform-origin: bottom center;
+    }
+  }
 }
