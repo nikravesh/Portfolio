@@ -1,18 +1,9 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .container {
   display: flex;
   flex-direction: column;
   min-width: 100%;
   justify-content: center;
   align-items: center;
-  background: #1c2541;
-  color: wheat;
   font-weight: bolder;
   font-size: 5rem;
-  height: calc(100vh - 91px);
 }
