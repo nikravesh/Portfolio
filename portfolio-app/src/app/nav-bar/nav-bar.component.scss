@@ -38,6 +38,9 @@
 }
 
 .logo {
+  :hover {
+    cursor: pointer;
+  }
   .logo-photo {
     margin: 8px;
     width: 75px;

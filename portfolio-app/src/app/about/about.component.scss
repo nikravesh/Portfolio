@@ -1,0 +1,20 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-top: 5rem;
+  margin-left: 12rem;
+  margin-right: 12rem;
+  background: #0d1b2a;
+  color: #dde6ef;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card-title {
+  margin-bottom: 1.5rem;
+}
+
+.card-subtitle {
+  margin-bottom: 1.5rem;
+}
