@@ -6,6 +6,9 @@
 
 body {
   background: #1c2541;
-  color: wheat;
+  color: #fff;
   height: calc(100vh - 91px);
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "wdth" 100;
 }
