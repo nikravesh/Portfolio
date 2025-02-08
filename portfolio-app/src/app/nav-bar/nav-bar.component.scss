@@ -1,4 +1,7 @@
-.container {
+* {
+  box-sizing: border-box;
+}
+.container-fluid {
   background-color: #0d1b2a;
   display: flex;
   height: 91px;

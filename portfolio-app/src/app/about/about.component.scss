@@ -10,3 +10,12 @@ hr {
   border-top: var(--bs-border-width) solid;
   opacity: 0.25;
 }
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
