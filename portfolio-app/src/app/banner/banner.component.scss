@@ -8,8 +8,9 @@
 }
 
 .banner-photo {
-  width: 350px;
-  height: 350px;
+  margin-top: 5rem;
+  width: 25%;
+  height: 25%;
   border-radius: 50%;
 }
 
@@ -18,9 +19,10 @@
 }
 
 .banner-name {
-  font-size: 4rem;
   text-transform: uppercase;
   display: block;
+  margin: 0;
+  border: 0;
 }
 
 .text-color {
@@ -28,5 +30,5 @@
 }
 
 .banner-description {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }

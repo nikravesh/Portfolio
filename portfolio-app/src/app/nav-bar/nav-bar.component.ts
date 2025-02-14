@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -8,4 +8,20 @@ import { RouterLink } from '@angular/router';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
 })
-export class NavBarComponent {}
+export class NavBarComponent implements OnInit {
+  isNavOpen = false;
+
+  ngOnInit() {}
+
+  toggleNav() {
+    this.isNavOpen = !this.isNavOpen;
+  }
+
+  closeNav() {
+    this.isNavOpen = false;
+  }
+
+  navItemClick() {
+    this.closeNav();
+  }
+}
