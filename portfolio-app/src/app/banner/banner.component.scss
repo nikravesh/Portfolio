@@ -1,34 +1,17 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-weight: bolder;
-  margin-bottom: 3rem;
+/* home.component.css */
+.text-typing {
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 2px solid #fff;
+  animation: blink 0.8s infinite;
 }
 
-.banner-photo {
-  margin-top: 5rem;
-  width: 25%;
-  height: 25%;
-  border-radius: 50%;
-}
-
-.greeting {
-  font-size: 2rem;
-}
-
-.banner-name {
-  text-transform: uppercase;
-  display: block;
-  margin: 0;
-  border: 0;
-}
-
-.text-color {
-  color: #ffbd39;
-}
-
-.banner-description {
-  font-size: 1.5rem;
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
 }

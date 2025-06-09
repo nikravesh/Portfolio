@@ -10,4 +10,5 @@ export class FooterComponent {
   myName = 'Alireza Nikravesh';
   myEmailAddress = 'mailto:a.z.nikravesh@gmail.com';
   myLinkedInProfile = 'https://www.linkedin.com/in/alireza-nikravesh';
+  currentYear: number = new Date().getFullYear();
 }

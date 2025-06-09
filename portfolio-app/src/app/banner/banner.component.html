@@ -1,12 +1,43 @@
-<div class="container">
-  <img
-    class="banner-photo"
-    src="assets/images/banner-photo.jpeg"
-    alt="Alireza Nikravesh"
-  />
-  <div>
-    <h1 class="greeting"><span class="text-color">Hi</span>, I'm</h1>
-    <h1 class="banner-name text-color">Alireza Nikravesh</h1>
-    <span class="banner-description">{{ typedText | async }}</span>
+<div class="h-screen flex flex-col overflow-hidden bg-gray-900 text-white">
+  <div
+    class="flex-grow flex flex-col justify-center items-center text-center px-4"
+  >
+    <section class="text-center py-16 flex flex-col items-center">
+      <img
+        src="assets/images/banner-photo.jpeg"
+        [alt]="{myName}"
+        class="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover shadow-lg mb-6"
+      />
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">
+        Hi, I'm <span class="text-indigo-400">{{ myName }}</span>
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-300 mb-4">
+        <span class="text-typing text-indigo-300">{{ displayText }}</span>
+      </p>
+      <div class="mt-6 flex flex-wrap gap-4 justify-center">
+        <button
+          class="w-full sm:w-40 px-4 py-2 rounded-full transition bg-indigo-500 text-white hover:bg-indigo-600"
+        >
+          Contact Me
+        </button>
+        <button
+          class="w-full sm:w-40 px-4 py-2 rounded-full transition bg-gray-800 text-white hover:bg-gray-700"
+        >
+          About
+        </button>
+        <button
+          class="w-full sm:w-40 px-4 py-2 rounded-full transition bg-gray-800 text-white hover:bg-gray-700"
+        >
+          Skills
+        </button>
+        <button
+          class="w-full sm:w-40 px-4 py-2 rounded-full transition bg-gray-800 text-white hover:bg-gray-700"
+        >
+          Portfolio
+        </button>
+      </div>
+    </section>
   </div>
+
+  <app-footer></app-footer>
 </div>
