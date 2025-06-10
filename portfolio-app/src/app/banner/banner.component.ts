@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-banner',
-  imports: [FooterComponent],
+  imports: [FooterComponent, RouterLink],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })
