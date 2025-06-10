@@ -1,15 +1,15 @@
 <nav class="flex items-center justify-between px-6 py-4 bg-gray-900 text-white">
   <!-- Brand (Image + Name) -->
-  <div class="flex items-center space-x-3">
-    <img src="assets/images/logo-photo.jpeg" alt="Profile" class="w-10 h-10 rounded-full" />
-    <span class="text-xl font-semibold">{{myName}}</span>
+  <div class="flex items-center space-x-5 cursor-pointer" routerLink="/">
+    <img src="assets/images/logo-photo.jpg" alt="Profile" class="w-10 h-10 rounded-full" />
+    <span class="text-xl font-semibold hover:text-indigo-300 transition">{{myName}}</span>
   </div>
 
   <!-- Nav Links -->
   <div class="flex space-x-6 text-lg">
-    <a routerLink="/contact" routerLinkActive="text-indigo-400" class="hover:text-indigo-400 transition">Contact</a>
-    <a routerLink="/skills" routerLinkActive="text-indigo-400" class="hover:text-indigo-400 transition">Skills</a>
-    <a routerLink="/about" routerLinkActive="text-indigo-400" class="hover:text-indigo-400 transition">About</a>
-    <a routerLink="/" routerLinkActive="text-indigo-400" class="hover:text-indigo-400 transition">Portfolio</a>
+    <a routerLink="/" routerLinkActive="text-indigo-400" class="hover:border-b-2 hover:border-indigo-100 hover:-translate-y-1 transition duration-300 cursor-pointer">Portfolio</a>
+    <a routerLink="/contact" routerLinkActive="text-indigo-400" class="hover:border-b-2 hover:border-indigo-100 hover:-translate-y-1 transition duration-300 cursor-pointer">Contact</a>
+    <a routerLink="/skills" routerLinkActive="text-indigo-400" class="hover:border-b-2 hover:border-indigo-100 hover:-translate-y-1 transition duration-300 cursor-pointer">Skills</a>
+    <a routerLink="/about" routerLinkActive="text-indigo-400" class="hover:border-b-2 hover:border-indigo-100 hover:-translate-y-1 transition duration-300 cursor-pointer">About</a>    
   </div>
 </nav>
