@@ -1,18 +1,27 @@
-<nav class="flex bg-gray-700 items-center justify-between px-6 py-4 text-white">
-  <!-- Brand (Image + Name) -->
+<nav class="bg-gray-700 text-white px-6 py-4 flex items-center justify-between">
+  <!-- Brand -->
   <div class="flex items-center space-x-5 cursor-pointer" routerLink="/">
     <img
       src="assets/images/logo-photo.jpg"
       alt="Profile"
       class="w-10 h-10 rounded-full"
     />
-    <span class="text-xl font-semibold hover:text-indigo-300 transition">{{
-      myName
-    }}</span>
+    <span class="text-xl font-semibold hover:text-indigo-300 transition">
+      {{ myName }}
+    </span>
   </div>
 
-  <!-- Nav Links -->
-  <div class="flex space-x-6 text-lg">
+  <!-- Hamburger Button (visible on small screens only) -->
+  <button
+    class="sm:hidden flex items-center px-3 py-2 border rounded text-white border-white hover:text-indigo-300 hover:border-indigo-300 transition"
+    (click)="isOpen = !isOpen"
+    aria-label="Toggle Menu"
+  >
+    <span class="material-symbols-outlined"> menu_open </span>
+  </button>
+
+  <!-- Nav Links (hidden on small, flex on sm+) -->
+  <div class="hidden sm:flex sm:items-center sm:space-x-6">
     <a
       routerLink="/"
       routerLinkActive="text-indigo-400"
@@ -39,3 +48,37 @@
     >
   </div>
 </nav>
+
+<!-- Mobile menu below navbar -->
+<div
+  [ngClass]="{
+    block: isOpen,
+    hidden: !isOpen
+  }"
+  class="sm:hidden bg-gray-700 px-6 py-4 space-y-3"
+>
+  <a
+    routerLink="/"
+    routerLinkActive="text-indigo-400"
+    class="block hover:border-b-2 hover:border-indigo-100 hover:-translate-y-1 transition duration-300 cursor-pointer p-2"
+    >Portfolio</a
+  >
+  <a
+    routerLink="/contact"
+    routerLinkActive="text-indigo-400"
+    class="block hover:border-b-2 hover:border-indigo-100 hover:-translate-y-1 transition duration-300 cursor-pointer p-2"
+    >Contact</a
+  >
+  <a
+    routerLink="/skills"
+    routerLinkActive="text-indigo-400"
+    class="block hover:border-b-2 hover:border-indigo-100 hover:-translate-y-1 transition duration-300 cursor-pointer p-2"
+    >Skills</a
+  >
+  <a
+    routerLink="/about"
+    routerLinkActive="text-indigo-400"
+    class="block hover:border-b-2 hover:border-indigo-100 hover:-translate-y-1 transition duration-300 cursor-pointer p-2"
+    >About</a
+  >
+</div>

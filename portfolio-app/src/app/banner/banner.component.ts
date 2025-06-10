@@ -6,20 +6,21 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-banner',
-  imports: [FooterComponent, RouterLink],
+  standalone: true,
+  imports: [FooterComponent, RouterLink, ],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
-})
+})  
 export class BannerComponent implements OnInit, OnDestroy {
   myName = 'Alireza Nikravesh';
   displayText = '';
-  private sub!: Subscription
+  private sub!: Subscription;
 
-  constructor(private typewriterService: TypewriterService) { }
+  constructor(private typewriterService: TypewriterService) {}
 
   ngOnInit(): void {
     this.typewriterService.typeEffect();
-    this.sub = this.typewriterService.displayText$.subscribe(text => {
+    this.sub = this.typewriterService.displayText$.subscribe((text) => {
       this.displayText = text;
     });
   }
