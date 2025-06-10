@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterLink } from '@angular/router';
+import { TypewriterService } from '../services/typewriter.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-banner',
@@ -8,48 +10,21 @@ import { RouterLink } from '@angular/router';
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })
-export class BannerComponent implements OnInit {
+export class BannerComponent implements OnInit, OnDestroy {
   myName = 'Alireza Nikravesh';
-  aboutTexts = [
-    'Software Developer.',
-    'Web Enthusiast.',
-    'Problem Solver.',
-    'Angular & .NET Specialist.',
-  ];
   displayText = '';
-  private textIndex = 0;
-  private charIndex = 0;
-  private typingSpeed = 100;
-  private erasingSpeed = 50;
-  private delayBetween = 2000;
+  private sub!: Subscription
+
+  constructor(private typewriterService: TypewriterService) { }
 
   ngOnInit(): void {
-    this.startTyping();
+    this.typewriterService.typeEffect();
+    this.sub = this.typewriterService.displayText$.subscribe(text => {
+      this.displayText = text;
+    });
   }
 
-  private startTyping() {
-    if (this.charIndex < this.aboutTexts[this.textIndex].length) {
-      this.displayText += this.aboutTexts[this.textIndex].charAt(
-        this.charIndex
-      );
-      this.charIndex++;
-      setTimeout(() => this.startTyping(), this.typingSpeed);
-    } else {
-      setTimeout(() => this.startErasing(), this.delayBetween);
-    }
-  }
-
-  private startErasing() {
-    if (this.charIndex > 0) {
-      this.displayText = this.aboutTexts[this.textIndex].substring(
-        0,
-        this.charIndex - 1
-      );
-      this.charIndex--;
-      setTimeout(() => this.startErasing(), this.erasingSpeed);
-    } else {
-      this.textIndex = (this.textIndex + 1) % this.aboutTexts.length;
-      setTimeout(() => this.startTyping(), this.typingSpeed);
-    }
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }

@@ -1,53 +1,52 @@
-import { Injectable } from '@angular/core';
-import {
-  concat,
-  concatMap,
-  delay,
-  from,
-  ignoreElements,
-  interval,
-  map,
-  of,
-  repeat,
-  take,
-} from 'rxjs';
 
-interface TypeParams {
-  word: string;
-  speed: number;
-  backwards?: boolean;
-}
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TypewriterService {
-  constructor() {}
+  private textIndex = 0;
+  private charIndex = 0;
+  private typingSpeed = 100;
+  private erasingSpeed = 50;
+  private delayBetween = 2000;
 
-  typeEffect(word: string) {
-    return concat(
-      this.type({ word, speed: 50 }),
-      of('').pipe(delay(1200), ignoreElements()),
-      this.type({ word, speed: 30, backwards: true }),
-      of('').pipe(delay(300), ignoreElements())
-    );
+  displayText$ = new BehaviorSubject<string>('');
+
+  aboutTexts = [
+    'Software Developer.',
+    '.Net Enthusiast.',
+    'Problem Solver.',
+    'Angular & .NET Specialist.',
+  ];
+
+  constructor() { }
+
+  typeEffect() {
+    this.startTyping();
   }
 
-  getTypewriterEffect(titles: string[]) {
-    return from(titles).pipe(
-      concatMap((title) => this.typeEffect(title)),
-      repeat()
-    );
+  private startTyping() {
+    if (this.charIndex < this.aboutTexts[this.textIndex].length) {
+      const current = this.displayText$.value;
+      this.displayText$.next(current + this.aboutTexts[this.textIndex].charAt(this.charIndex));
+      this.charIndex++;
+      setTimeout(() => this.startTyping(), this.typingSpeed);
+    } else {
+      setTimeout(() => this.startErasing(), this.delayBetween);
+    }
   }
 
-  private type({ word, speed, backwards = false }: TypeParams) {
-    return interval(speed).pipe(
-      map((x) =>
-        backwards
-          ? word.substring(0, word.length - x)
-          : word.substring(0, x + 1)
-      ),
-      take(word.length)
-    );
+  private startErasing() {
+    if (this.charIndex > 0) {
+      const current = this.displayText$.value;
+      this.displayText$.next(current.substring(0, current.length - 1));
+      this.charIndex--;
+      setTimeout(() => this.startErasing(), this.erasingSpeed);
+    } else {
+      this.textIndex = (this.textIndex + 1) % this.aboutTexts.length;
+      setTimeout(() => this.startTyping(), this.typingSpeed);
+    }
   }
 }
