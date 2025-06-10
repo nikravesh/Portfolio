@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -15,13 +14,14 @@ export class TypewriterService {
   displayText$ = new BehaviorSubject<string>('');
 
   aboutTexts = [
-    'Software Developer.',
-    '.Net Enthusiast.',
-    'Problem Solver.',
-    'Angular & .NET Specialist.',
+    'Software Developer',
+    '.Net Enthusiast',
+    'Problem Solver',
+    'Angular & .NET Specialist',
+    'Love nature & workout',
   ];
 
-  constructor() { }
+  constructor() {}
 
   typeEffect() {
     this.startTyping();
@@ -30,7 +30,9 @@ export class TypewriterService {
   private startTyping() {
     if (this.charIndex < this.aboutTexts[this.textIndex].length) {
       const current = this.displayText$.value;
-      this.displayText$.next(current + this.aboutTexts[this.textIndex].charAt(this.charIndex));
+      this.displayText$.next(
+        current + this.aboutTexts[this.textIndex].charAt(this.charIndex)
+      );
       this.charIndex++;
       setTimeout(() => this.startTyping(), this.typingSpeed);
     } else {
