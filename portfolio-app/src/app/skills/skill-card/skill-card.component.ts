@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Skill } from '../skills.component';
 import { NgClass } from '@angular/common';
+import { Skill } from '../interfaces/skill-interface';
 
 @Component({
   selector: 'app-skill-card',
