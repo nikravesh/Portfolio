@@ -7,6 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './aboutme.component.scss',
 })
 export class AboutmeComponent {
-  title = 'About me';
   myName = "I'm Alireza Nikravesh";
 }
