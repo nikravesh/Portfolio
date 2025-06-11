@@ -39,17 +39,17 @@ export class SkillService {
           {
             name: 'C#',
             color: this.coloredSkillsByExprience(90),
-            level: 60,
+            level: 90,
           },
           {
             name: 'TypeScript',
             color: this.coloredSkillsByExprience(50),
-            level: 10,
+            level: 50,
           },
           {
             name: 'JavaScript',
             color: this.coloredSkillsByExprience(25),
-            level: 10,
+            level: 25,
           },
         ],
       },
@@ -97,7 +97,12 @@ export class SkillService {
       {
         category: 'Tools',
         skills: [
-          { name: 'Git', color: this.coloredSkillsByExprience(65), level: 65 },
+          { name: 'Git', color: this.coloredSkillsByExprience(70), level: 70 },
+          {
+            name: 'RabbitMQ',
+            color: this.coloredSkillsByExprience(70),
+            level: 70,
+          },
           {
             name: 'Azure DevOps',
             color: this.coloredSkillsByExprience(40),
@@ -108,10 +113,36 @@ export class SkillService {
             color: this.coloredSkillsByExprience(30),
             level: 30,
           },
+        ],
+      },
+      {
+        category: 'More',
+        skills: [
           {
-            name: 'RabbitMQ',
+            name: 'CQRS',
+            color: this.coloredSkillsByExprience(90),
+            level: 90,
+          },
+          {
+            name: 'OAuth 2.0',
+            color: this.coloredSkillsByExprience(80),
+            level: 80,
+          },
+          {
+            name: 'Domain Driven Design (DDD)',
             color: this.coloredSkillsByExprience(70),
             level: 70,
+          },
+
+          {
+            name: 'XUnit (Test)',
+            color: this.coloredSkillsByExprience(70),
+            level: 70,
+          },
+          {
+            name: 'Microservice',
+            color: this.coloredSkillsByExprience(30),
+            level: 30,
           },
         ],
       },
@@ -120,9 +151,9 @@ export class SkillService {
 
   private coloredSkillsByExprience(level: number): string {
     if (level <= 30) {
-      return 'bg-yellow-500';
+      return 'bg-yellow-400';
     } else if (level <= 60) {
-      return 'bg-orange-500';
+      return 'bg-orange-400';
     } else {
       return 'bg-green-500';
     }
