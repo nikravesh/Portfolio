@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FooterComponent } from '../footer/footer.component';
 import { RouterLink } from '@angular/router';
 import { TypewriterService } from '../services/typewriter.service';
 import { Subscription } from 'rxjs';
@@ -7,10 +6,10 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-banner',
   standalone: true,
-  imports: [FooterComponent, RouterLink, ],
+  imports: [RouterLink],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
-})  
+})
 export class BannerComponent implements OnInit, OnDestroy {
   myName = 'Alireza Nikravesh';
   displayText = '';
