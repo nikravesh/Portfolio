@@ -1,0 +1,14 @@
+<!-- skill-card.component.html -->
+<div class="w-full" title="{{ skill.name }} - {{ skill.level }}%">
+  <div class="flex justify-between mb-1">
+    <span class="font-semibold text-gray-500">{{ skill.name }}</span>
+    <span class="text-sm font-medium text-gray-500">{{ skill.level }}%</span>
+  </div>
+  <div class="w-full bg-gray-200 rounded-full h-5 overflow-hidden">
+    <div
+      class="h-5 rounded-full"
+      [ngClass]="skill.color"
+      [style.width.%]="skill.level"
+    ></div>
+  </div>
+</div>

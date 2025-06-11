@@ -1,14 +1,23 @@
-<app-nav-bar></app-nav-bar>
-<section>
-  <div class="container">
-    <h2>Skills</h2>
-  </div>
-  <div class="container">
-    <div>
-      <app-skill-item></app-skill-item>
+<div class="p-8 max-w-6xl mx-auto">
+  <h1 class="text-4xl font-bold mb-8 text-center">My Skills</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    @for(category of skillCategories;track category.category){
+    <div class="space-y-6">
+      <h2 class="text-2xl font-semibold border-b-2 border-gray-300 pb-2">
+        {{ category.category }}
+      </h2>
+
+      <div
+        class="flex flex-col flex-wrap gap-6 justify-center"
+        role="list"
+        [attr.aria-label]="category.category + ' skills'"
+      >
+        @for(skill of category.skills;track skill.name){
+        <app-skill-card [skill]="skill"></app-skill-card>
+        }
+      </div>
     </div>
-    <div>
-      <app-skill-item></app-skill-item>
-    </div>
+    }
   </div>
-</section>
+</div>
