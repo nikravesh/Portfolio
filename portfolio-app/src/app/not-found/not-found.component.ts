@@ -3,9 +3,9 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-under-construction',
+  selector: 'app-not-found',
   imports: [NavBarComponent, RouterLink],
-  templateUrl: './under-construction.component.html',
-  styleUrl: './under-construction.component.scss',
+  templateUrl: './not-found.component.html',
+  styleUrl: './not-found.component.scss',
 })
-export class UnderConstructionComponent {}
+export class NotFoundComponent {}
