@@ -397,4 +397,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 portfolio-app/package-lock.json
-portfolio-app/src/environment.ts
+
