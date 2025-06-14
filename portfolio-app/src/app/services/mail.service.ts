@@ -11,7 +11,6 @@ export class MailService {
     event.preventDefault();
 
     const form = event.target as HTMLFormElement;
-    debugger;
 
     emailjs
       .sendForm(

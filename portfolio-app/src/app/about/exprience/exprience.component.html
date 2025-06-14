@@ -1,0 +1,22 @@
+@for(exp of experiences;track exp.company){
+<div class="relative mb-10 pl-8">
+  <!-- Partial vertical line for this item -->
+  <div class="absolute left-2 top-3 bottom-0 border-l-2 border-gray-600"></div>
+
+  <!-- Dot -->
+  <span
+    class="absolute -left-1 top-1 rounded-full h-6 w-6"
+    [ngClass]="'border-' + exp.color + ' bg-' + exp.color"
+  ></span>
+
+  <!-- Content box -->
+  <div class="bg-gray-800 p-4 rounded-lg shadow">
+    <h3 class="text-xl font-semibold italic">{{ exp.company }}</h3>
+    @for(des of exp.description;track $index){
+    <p class="text-gray-300 mt-2">{{ des }}</p>
+    }
+
+    <span class="text-gray-400 text-sm">{{ exp.period }}</span>
+  </div>
+</div>
+}

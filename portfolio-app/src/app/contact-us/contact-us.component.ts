@@ -27,7 +27,6 @@ export class ContactUsComponent implements OnInit {
   }
 
   sendEmail($event: Event) {
-    debugger;
     this.mailService.sendMail($event, this.formData);
   }
 }
