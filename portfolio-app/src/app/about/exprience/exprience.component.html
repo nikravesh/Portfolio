@@ -10,7 +10,7 @@
   <ul class="bg-gray-800 p-4 rounded-lg shadow">
     <h3 class="text-xl font-semibold italic">{{ exp.company }}</h3>
     @for(des of exp.description;track $index){
-    <li class="text-gray-300 mt-2">{{ des }}</li>
+    <li class="list-disc text-gray-300 mt-2 ml-2">{{ des }}</li>
     }
     <span class="text-gray-400 text-sm">{{ exp.period }}</span>
   </ul>
