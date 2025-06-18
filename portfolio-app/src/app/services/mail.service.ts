@@ -22,7 +22,6 @@ export class MailService {
       .then(
         () => {
           alert('Message sent successfully!');
-          debugger;
           emailjs
             .sendForm(
               environment.emailServiceId,
