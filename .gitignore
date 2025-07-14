@@ -398,3 +398,5 @@ FodyWeavers.xsd
 *.sln.iml
 portfolio-app/package-lock.json
 
+portfolio-app/src/environment.ts
+portfolio-app/src/environment.prod.ts
