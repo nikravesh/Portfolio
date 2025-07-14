@@ -14,10 +14,10 @@ export class TypewriterService {
   displayText$ = new BehaviorSubject<string>('');
 
   aboutTexts = [
-    'Software Developer',
-    '.Net Enthusiast',
+    'Software Engineer/Developer',
     'Problem Solver',
-    'Angular & .NET Specialist',
+    '.Net Enthusiast',
+    '.NET & Angular Specialist',
     'Love nature & workout',
   ];
 
