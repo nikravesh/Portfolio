@@ -14,7 +14,7 @@ export class TypewriterService {
   displayText$ = new BehaviorSubject<string>('');
 
   aboutTexts = [
-    'Software Engineer/Developer',
+    'Software Engineer',
     'Problem Solver',
     '.Net Enthusiast',
     '.NET & Angular Specialist',
